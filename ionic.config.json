@@ -1,0 +1,7 @@
+{
+  "name": "MiAppExamenCarlosPulido",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
