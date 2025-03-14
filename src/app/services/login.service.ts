@@ -14,7 +14,7 @@ export class LoginService {
     return this.http.post<any>(`${this.apiUrl}`, datos);
   }
 
-  obtenerProductos(): Observable<any[]> {
-    return this.http.get<any[]>(`${this.apiUrl}`);
+  obtenerProductos(): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}`);
   }
 }

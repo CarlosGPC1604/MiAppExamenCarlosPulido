@@ -26,10 +26,13 @@ export class LoginPage implements OnInit {
       correo: this.correo,
       password: this.password
     };
-
+  
     this.loginService.enviarDatos(datos).subscribe(response => {
       if (response.success) {
-        this.loginService.obtenerProductos().subscribe(productos => {
+        this.loginService.obtenerProductos().subscribe(productosResponse => {
+          const productos = Array.isArray(productosResponse) ? productosResponse : 
+                            (productosResponse && productosResponse.data) ? productosResponse.data : [];
+          
           this.router.navigate(['/home'], { state: { productos: productos } });
         }, error => {
           console.error('Error al obtener productos:', error);
